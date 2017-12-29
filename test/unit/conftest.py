@@ -59,6 +59,10 @@ class FakeApi(BaseTestDouble):
         full_path = self.find_file(self.sanitize_text(command) + '.json')
         return tuple(self.read_json_file(full_path)['data'])
 
+    def query(self, command, *args):
+        full_path = self.find_file(self.sanitize_text(command) + '.json')
+        return tuple(self.read_json_file(full_path)['data'])
+
     def close(self):
         pass
 
